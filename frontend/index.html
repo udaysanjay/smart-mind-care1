@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCare - Mental Health Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        patient: {
+                            50: '#F8FAFC',
+                            100: '#DBEAFE',
+                            500: '#60A5FA',
+                            600: '#2563EB',
+                            900: '#0F172A',
+                        },
+                        psych: {
+                            50: '#FAF5FF',
+                            100: '#EDE9FE',
+                            400: '#A78BFA',
+                            600: '#7C3AED',
+                            900: '#1E1B4B',
+                        }
+                    },
+                    boxShadow: {
+                        'premium': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                    },
+                    borderRadius: {
+                        'xl': '16px',
+                        '2xl': '24px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        
+        /* Premium Animations */
+        .fade-in { animation: fadeIn 0.3s ease-out forwards; }
+        .slide-up { animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .hover-scale { transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .hover-scale:hover { transform: scale(1.02); }
+        
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Shimmer Loading */
+        .shimmer {
+            background: #f6f7f8;
+            background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+            background-repeat: no-repeat;
+            background-size: 800px 100%;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-name: placeholderShimmer;
+            animation-timing-function: linear;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes placeholderShimmer {
+            0% { background-position: -468px 0; }
+            100% { background-position: 468px 0; }
+        }
+
+        /* Hide scrollbar for clean UI */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body>
+    <div id="app" class="min-h-screen bg-patient-50 text-patient-900 transition-colors duration-300 flex">
+        <!-- Navigation Bar -->
+        <nav id="navbar"></nav>
+
+        <!-- Right Side Wrapper -->
+        <div id="content-wrapper" class="flex-1 min-h-screen flex flex-col w-full relative lg:pl-[320px]">
+            <!-- Top Header -->
+            <header id="top-header" class="w-full max-w-6xl mx-auto px-4 lg:px-8 py-4 flex justify-end items-center gap-4 z-40 relative"></header>
+
+            <!-- Main Content Area -->
+            <main id="main-content" class="w-full max-w-6xl mx-auto flex-1 pb-32 lg:pb-8 px-4 lg:px-8 transition-all duration-300">
+                <p>Loading MindCare...</p>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/state/store.js"></script>
+    <script src="src/services/api.js"></script>
+    <script src="src/components/navbar.js"></script>
+    <script src="src/pages/home.js"></script>
+    <script src="src/pages/login.js"></script>
+    <script src="src/pages/signup.js"></script>
+    <script src="src/pages/profile.js"></script>
+    <script src="src/pages/psychologists.js"></script>
+    <script src="src/pages/meetings.js"></script>
+    <script src="src/services/chatbotService.js"></script>
+    <script src="src/state/chatState.js"></script>
+    <script src="src/pages/ai-chat.js"></script>
+    <script src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+# Environment Variables (CRITICAL)
+.env
+.env.*
+
+# Local Database
+*.db
+*.sqlite
+*.sqlite3
+mindcare.db
+backend/mindcare.db
+
+# Python / Backend
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+venv/
+env/
+.venv/
+
+# Node / Frontend
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+build/
+
+# User Uploads
+static/avatars/
+backend/static/avatars/
+
+# OS / IDE Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing Scripts
+test_gemini.py
+test.py
