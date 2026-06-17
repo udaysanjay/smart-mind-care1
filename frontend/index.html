@@ -112,18 +112,23 @@
     </div>
 
     <!-- Scripts -->
+    <!-- Core State & Services (Dependencies) -->
     <script src="src/state/store.js"></script>
     <script src="src/services/api.js"></script>
+    <script src="src/state/chatState.js"></script>
+    <script src="src/services/chatbotService.js"></script>
+
+    <!-- UI Components & Page Renderers -->
     <script src="src/components/navbar.js"></script>
-    <script src="src/pages/home.js"></script>
     <script src="src/pages/login.js"></script>
     <script src="src/pages/signup.js"></script>
+    <script src="src/pages/home.js"></script>
     <script src="src/pages/profile.js"></script>
     <script src="src/pages/psychologists.js"></script>
     <script src="src/pages/meetings.js"></script>
-    <script src="src/services/chatbotService.js"></script>
-    <script src="src/state/chatState.js"></script>
     <script src="src/pages/ai-chat.js"></script>
+
+    <!-- Main Application Logic (Load Last) -->
     <script src="src/app.js"></script>
 </body>
 </html>
