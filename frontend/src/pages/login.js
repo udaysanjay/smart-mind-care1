@@ -98,7 +98,7 @@ function renderLogin(container) {
             </div>
         `;
 
-        document.getElementById('toggle-patient').addEventListener('click', () => {
+        document.getElementById('toggle-user').addEventListener('click', () => {
             if (currentRole !== 'patient') {
                 currentRole = 'patient';
                 renderForm();
