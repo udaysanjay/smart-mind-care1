@@ -1,6 +1,6 @@
 const CHATBOT_BASE_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
     ? 'http://localhost:8000/api/v1/chatbot'
-    : 'https://zx8sbvxk-8000.inc1.devtunnels.ms/api/v1/chatbot';
+    : 'https://smart-mind-care1.onrender.com/api/v1/chatbot';
 
 class ChatbotService {
     static async sendMessage(message) {

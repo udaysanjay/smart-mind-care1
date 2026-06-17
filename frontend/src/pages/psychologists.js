@@ -72,7 +72,7 @@ async function renderPsychologists(container) {
 
     const backendUrl = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
         ? 'http://localhost:8000'
-        : 'https://zx8sbvxk-8000.inc1.devtunnels.ms';
+        : 'https://smart-mind-care1.onrender.com';
 
     const loadPsychologists = async () => {
         grid.innerHTML = `

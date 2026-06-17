@@ -14,7 +14,7 @@ async function renderAiChat(container) {
 
     const backendUrl = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
         ? 'http://localhost:8000'
-        : 'https://zx8sbvxk-8000.inc1.devtunnels.ms';
+        : 'https://smart-mind-care1.onrender.com';
     const userAvatarUrl = user.avatar_url ? `${backendUrl}${user.avatar_url}` : null;
     const isPatient = user.role === 'patient';
     const themeColor = isPatient ? 'text-blue-600' : 'text-violet-600';
