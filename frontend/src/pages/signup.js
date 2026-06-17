@@ -140,8 +140,10 @@ function renderSignup(container) {
                     role: currentRole
                 };
 
+                let specValue = null;
                 if (currentRole === 'psychologist') {
-                    registrationPayload.specialization = document.getElementById('specialization').value;
+                    specValue = document.getElementById('specialization').value;
+                    registrationPayload.specialization = specValue;
                 }
 
                 await ApiService.register(registrationPayload);
@@ -152,7 +154,23 @@ function renderSignup(container) {
                     document.getElementById('password').value
                 );
                 Store.setToken(data.access_token);
-                const user = await ApiService.getMe();
+                let user = await ApiService.getMe();
+
+                // Safely ensure specialization is saved even if the backend schema ignored it during registration
+                if (currentRole === 'psychologist' && specValue && !user.specialization) {
+                    try {
+                        user = await ApiService.updateProfile({
+                            first_name: user.first_name,
+                            last_name: user.last_name,
+                            phone_number: user.phone_number || '',
+                            bio: user.bio || '',
+                            specialization: specValue
+                        });
+                    } catch (err) {
+                        console.warn("Could not save initial specialization:", err);
+                    }
+                }
+
                 Store.setUser(user);
                 
                 window.location.hash = '#/home';

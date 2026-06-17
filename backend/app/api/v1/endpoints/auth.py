@@ -27,7 +27,7 @@ def register_user(user_in: UserCreate, db: Session = Depends(deps.get_db)):
         first_name=user_in.first_name,
         last_name=user_in.last_name,
         role=user_in.role,
-        specialization=user_in.specialization if user_in.role == 'psychologist' else None
+        specialization=getattr(user_in, 'specialization', None) if user_in.role == 'psychologist' else None
     )
     db.add(db_user)
     db.commit()
