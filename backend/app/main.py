@@ -30,6 +30,8 @@ origins = [
     "http://127.0.0.1:5500",
     "http://localhost:3000",
     "https://smart-mind-care1.onrender.com",
+    "https://smart-mind-care1-ui.onrender.com", 
+
 ]
 
 app.add_middleware(
