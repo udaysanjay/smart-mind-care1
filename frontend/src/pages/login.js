@@ -152,6 +152,7 @@ function renderLogin(container) {
                 
                 window.location.hash = '#/home';
             } catch (error) {
+                console.error("Login attempt failed:", error); // Add this for better debugging
                 document.getElementById('login-error-text').textContent = error.message || "Invalid credentials";
                 errDiv.classList.remove('hidden');
                 btn.disabled = false;
