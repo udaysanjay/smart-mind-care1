@@ -36,10 +36,12 @@ function renderProfile(container) {
                                 <p class="text-sm font-semibold text-gray-500 uppercase tracking-[0.18em]">Account</p>
                                 <h2 class="text-2xl font-bold text-gray-800">${user.first_name || user.email.split('@')[0]}</h2>
                             </div>
-                            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold ${isPatient ? 'bg-blue-50 text-blue-700' : 'bg-violet-50 text-violet-700'}">
-                                <i class="ph ph-briefcase text-base"></i>
-                                ${user.role}
-                            </span>
+                            ${!isPatient ? `
+                                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-violet-50 text-violet-700">
+                                    <i class="ph ph-briefcase text-base"></i>
+                                    Psychologist
+                                </span>
+                            ` : ''}
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="rounded-3xl bg-white p-4 border border-gray-100 shadow-sm">

@@ -11,8 +11,7 @@ class ChatbotService {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                'X-Tunnel-Skip-AntiPhishing-Page': 'true'
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({ message })
         });
@@ -33,8 +32,7 @@ class ChatbotService {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                'X-Tunnel-Skip-AntiPhishing-Page': 'true'
+                'Authorization': `Bearer ${token}`
             }
         });
 
@@ -54,8 +52,7 @@ class ChatbotService {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                'X-Tunnel-Skip-AntiPhishing-Page': 'true'
+                'Authorization': `Bearer ${token}`
             }
         });
 

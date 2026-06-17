@@ -8,7 +8,6 @@ class ApiService {
         
         const headers = {
             'Content-Type': 'application/json',
-            'X-Tunnel-Skip-AntiPhishing-Page': 'true',
             ...options.headers
         };
 
@@ -86,7 +85,6 @@ class ApiService {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`,
-                    'X-Tunnel-Skip-AntiPhishing-Page': 'true'
                     // Do not set Content-Type here, let browser set it with boundary for FormData
                 },
                 body: formData
