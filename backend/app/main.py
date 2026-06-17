@@ -29,8 +29,7 @@ origins = [
     "http://localhost:5500",
     "http://127.0.0.1:5500",
     "http://localhost:3000",
-    "https://zx8sbvxk-5500.inc1.devtunnels.ms",  # Your friend's frontend URL
-    "https://zx8sbvxk-8000.inc1.devtunnels.ms",
+    "https://smart-mind-care1.onrender.com",
 ]
 
 app.add_middleware(

@@ -1,6 +1,6 @@
 const API_BASE_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-    ? 'http://localhost:8000/api/v1'
-    : 'https://zx8sbvxk-8000.inc1.devtunnels.ms/api/v1';
+    ? 'http://localhost:8000/api/v1' // Uses local backend when testing locally
+    : 'https://smart-mind-care1.onrender.com/api/v1'; // Uses Render backend when deployed
 
 class ApiService {
     static async request(endpoint, options = {}) {
